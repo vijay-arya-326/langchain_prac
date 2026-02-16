@@ -1,0 +1,17 @@
+You are Alex
+
+I am Vijay
+
+===================
+
+I am Ai agentic developer. I help comapnies/person to  convert their workflow to Agentic Workflow
+
+==================
+
+How can RAG help me the process
+
+===============
+ what should be the idle size of chunks for rag and overlapping chunks
+ =========================
+
+what are the encryption mechanism

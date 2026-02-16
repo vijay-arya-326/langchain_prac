@@ -7,6 +7,18 @@ requires-python = ">=3.12"
 dependencies = [
     "dotenv>=0.9.9",
     "ipykernel>=7.2.0",
+    "langchain-core>=1.2.11",
     "langchain-openai>=1.1.9",
     "langgraph>=1.0.8",
+    "langgraph-checkpoint-sqlite>=3.0.3",
+    "langsmith[claude-agent-sdk]>=0.7.1",
+    "mlflow>=3.9.0",
 ]
+
+[dependency-groups]
+dev = [
+    "langchain",
+]
+
+[tool.uv.sources]
+langchain = { workspace = true }
