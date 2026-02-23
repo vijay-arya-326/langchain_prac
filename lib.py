@@ -11,7 +11,7 @@ def displayAllMessages(response):
     for m in response['messages']:
         print(m.pretty_print())
 
-def Logmsg(msg:str):
+def log_msg(msg:str):
     print(msg, file=sys.stderr)
 
 def cliBot(graphInstance: StateGraph, config=None, show_all_msg = False):
