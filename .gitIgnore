@@ -1,2 +1,4 @@
 sample.env
 .idea/
+.venv/
+**/*.db*

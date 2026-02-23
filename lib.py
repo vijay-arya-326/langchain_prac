@@ -1,6 +1,6 @@
 import sys
 
-from langchain_core.messages import HumanMessage, AIMessage
+from langchain_core.messages import HumanMessage
 from langgraph.graph import StateGraph
 import traceback
 
@@ -33,7 +33,11 @@ def cliBot(graphInstance: StateGraph, config=None, show_all_msg = False):
             else:
                 strippedMsg = inputMsg.strip()
                 humanMessage = [HumanMessage(content=strippedMsg)]
-                r = graphInstance.invoke({"messages": humanMessage}, config)
+                if config is None:
+                    r = graphInstance.invoke({"messages": humanMessage})
+                else:
+                    r = graphInstance.invoke({"messages": humanMessage}, config)
+
                 if show_all_msg == False:
                     print(f"Question:\n {strippedMsg}", end ="\n==============\n")
                     print("Assistant:\n")
@@ -43,5 +47,6 @@ def cliBot(graphInstance: StateGraph, config=None, show_all_msg = False):
     except Exception as e:
         print(e)
         print(traceback.format_exc())
+
 
 
